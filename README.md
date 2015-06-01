@@ -35,3 +35,10 @@ open browser tubuyaki_bigdata.html
 or mac osx shell
 
 ``open tubuyaki_bigdata.html``
+
+
+## 参考情報
+
+### D3.js
+* http://d3js.org/
+* http://bl.ocks.org/mbostock/4063269
