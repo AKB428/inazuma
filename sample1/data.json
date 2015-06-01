@@ -1,0 +1,40 @@
+{
+ "name": "flare",
+ "children": [
+  {
+   "name": "analytics",
+   "children": [
+    {
+     "name": "cluster",
+     "children": [
+      {"name": "機動戦士ガンダム", "size": 212}
+     ]
+    },
+    {
+     "name": "optimization",
+     "children": [
+      {"name": "ラブライブ！", "size": 1233}
+     ]
+    },
+    {
+     "name": "sdwd",
+     "children": [
+      {"name": "アイドルマスター", "size": 131}
+     ]
+    },
+    {
+     "name": "wwe",
+     "children": [
+      {"name": "やはり俺の青春ラブコメはまちがっている。", "size": 1213}
+     ]
+    },
+    {
+     "name": "wqwewe",
+     "children": [
+      {"name": "俺の妹がこんなに可愛いわけがない", "size": 1213}
+     ]
+    }
+   ]
+  }
+ ]
+}
