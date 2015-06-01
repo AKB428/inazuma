@@ -24,8 +24,8 @@ object inazuma {
       val features : scala.collection.mutable.ArrayBuffer[String] = new collection.mutable.ArrayBuffer[String]()
 
       for(index <- 0 to tokens.size()-1){
-        // 三文字以上の単語を抽出
-        if(tokens.get(index).getSurfaceForm().length() >= 3) {
+        // 二文字以上の単語を抽出
+        if(tokens.get(index).getSurfaceForm().length() >= 2) {
           features += tokens.get(index).getAllFeatures()
         }
       }
