@@ -1,7 +1,7 @@
 
 import org.apache.spark.{SparkConf, SparkContext}
 import org.atilika.kuromoji.{Token, Tokenizer}
-
+import java.io.PrintWriter
 /**
  * Created by AKB428
  */
@@ -13,7 +13,7 @@ object inazuma {
 
     val input = sc.textFile(args(0)) // hdfs://
 
-    var printRankingNum = 20
+    var printRankingNum = 10
     if (args.length == 2) {
       printRankingNum = args(1).toInt
     }
@@ -26,7 +26,10 @@ object inazuma {
       for(index <- 0 to tokens.size()-1){
         // 二文字以上の単語を抽出
         if(tokens.get(index).getSurfaceForm().length() >= 2) {
-          features += tokens.get(index).getAllFeatures()
+          if (tokens.get(index).getAllFeaturesArray()(0) == "名詞")
+          {
+            features += tokens.get(index).getSurfaceForm
+          }
         }
       }
 
@@ -43,10 +46,17 @@ object inazuma {
 
     // ソート結果から上位を取得
     for (r <- result.take(printRankingNum)) {
-      println(r.toString())
+      println(r._1 + "    " + r._2)
     }
 
+    val out = new PrintWriter("data.csv")
+    for (r <- result.take(printRankingNum)) {
+      out.println(r._1 + "," + r._2)
+    }
+    out.close
+
     sc.stop
+
 
   }
 }
