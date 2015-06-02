@@ -47,6 +47,11 @@ or mac osx shell
 
 ``open tubuyaki_bigdata.html``
 
+## アニメ作品タイトルの辞書について
+
+Project-ShangriLaの以下を利用しています。
+
+https://github.com/Project-ShangriLa/CreateDictionary
 
 ## 補足情報
 
