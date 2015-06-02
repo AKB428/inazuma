@@ -37,6 +37,21 @@ or
 
 ``run ./private/1433194505.txt ./dictionary/anime_2015_2Q.txt 20``
 
+### メインプログラム情報
+ 
+#### inazuma
+
+通常のテキストをパースする場合はこちら。
+
+プログラム内部ではフィルタリングをしていません。
+
+#### inazumaTwitter
+
+Twitterのストリームを解析する場合はこれを使う。
+
+日本語のみを抽出するようにフィルタリングしています。
+
+
 translate data csv->d3.json
 
 ``ruby csv2d3jsjson.rb data.csv > data.json``
