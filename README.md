@@ -11,7 +11,7 @@ NHKのつぶやビッグデータのインスパイアなソフトウェアで�
 
 ![pic](http://i.imgur.com/m2EPkHt.png)
 
-##インストールに必要なソフト
+##必要要件
 
 * JDK 7+
 * SBT
@@ -30,6 +30,12 @@ boot inazuma
 or
 
 ``run [data_file_path] [kuromoji_dict_path]``
+
+or 
+
+``run [data_file_path] [kuromoji_dict_path] [rank_take_num]``
+
+``run ./private/1433194505.txt ./dictionary/anime_2015_2Q.txt 20``
 
 translate data csv->d3.json
 

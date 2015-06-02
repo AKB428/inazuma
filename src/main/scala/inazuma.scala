@@ -14,22 +14,35 @@ object inazuma {
     val input = sc.textFile(args(0)) // hdfs://
 
     var printRankingNum = 10
-    if (args.length == 2) {
-      printRankingNum = args(1).toInt
+    var dictFilePath = "./dictionary/blank.txt"
+
+    if (args.length >= 2) {
+      dictFilePath = args(1)
+    }
+
+    if (args.length == 3) {
+      printRankingNum = args(2).toInt
     }
 
     // kuromoji(形態要素解析)で日本語解析
     val words = input.flatMap(x => {
-      val tokens : java.util.List[Token] = CustomTokenizer.tokenize(x)
+      val tokens : java.util.List[Token] = CustomTokenizer.tokenize(x, dictFilePath)
       val features : scala.collection.mutable.ArrayBuffer[String] = new collection.mutable.ArrayBuffer[String]()
 
       for(index <- 0 to tokens.size()-1){
         // 二文字以上の単語を抽出
         if(tokens.get(index).getSurfaceForm().length() >= 2) {
-          if (tokens.get(index).getAllFeaturesArray()(0) == "名詞")
+         // features += tokens.get(index).getSurfaceForm + "[" + tokens.get(index).getPartOfSpeech + "]"
+
+         if (tokens.get(index).getAllFeaturesArray()(0) == "名詞" && (tokens.get(index).getAllFeaturesArray()(1) == "一般" || tokens.get(index).getAllFeaturesArray()(1) == "固有名詞"))
           {
             features += tokens.get(index).getSurfaceForm
-          }
+          } else if (tokens.get(index).getPartOfSpeech == "カスタム名詞" ) {
+           // println(tokens.get(index).getPartOfSpeech)
+           // println(tokens.get(index).getSurfaceForm)
+           features += tokens.get(index).getSurfaceForm
+        }
+
         }
       }
 
@@ -49,6 +62,7 @@ object inazuma {
       println(r._1 + "    " + r._2)
     }
 
+    // 結果をCSVファイルに保存
     val out = new PrintWriter("data.csv")
     for (r <- result.take(printRankingNum)) {
       out.println(r._1 + "," + r._2)
@@ -62,9 +76,10 @@ object inazuma {
 }
 
 object CustomTokenizer {
-  def tokenize(text: String): java.util.List[Token]  = {
+
+  def tokenize(text: String, dictPath: String): java.util.List[Token]  = {
     Tokenizer.builder().mode(Tokenizer.Mode.SEARCH)
-      .userDictionary("./dictionary/anime_2015_2Q.txt")
+      .userDictionary(dictPath)
       .build().tokenize(text)
   }
 }
