@@ -68,15 +68,29 @@ Project-ShangriLaの以下のツールを利用しています。
 
 https://github.com/Project-ShangriLa/CreateDictionary
 
+[ShangriLa Anime API](https://github.com/Project-ShangriLa/sora-playframework-scala)
+
+
+## 実行例
+
+### 100万行のTwitterデータに対して実行した結果
+
+https://gist.github.com/AKB428/5ddcde92197584bc3456
+
 ## 補足情報
 
 ### HDFSファイルを読み込ませたい時
 
 sbtにHDFSのライブラリを追加してください。
 
+``libraryDependencies += "org.apache.hadoop" % "hadoop-client" % "2.6.0"``
+
 ### Sparkクラスタで動作させたい時
 
 sbt assemblyでjarを作ってspark-submitで実行してください。
+
+参照) [spark-submitにjarを渡すためにsbt assemblyするためのbuild.sbt](http://qiita.com/AKB428/items/ac0416fda8e01973db0f)
+
 
 ## 参考情報
 
