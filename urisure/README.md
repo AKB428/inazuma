@@ -12,3 +12,9 @@ http://refugee-chan.mobi/urisure/
 
 ## 文章データだけ抽出
 ``ruby urisure_dat_extraction.rb 1432824063.dat.utf8 > 1432824063.txt``
+
+
+
+![pic](http://i.imgur.com/IFg1VZD.png)
+
+
