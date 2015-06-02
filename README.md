@@ -73,7 +73,7 @@ https://github.com/Project-ShangriLa/CreateDictionary
 
 ## 実行例
 
-### 100万行のTwitterデータに対して実行した結果
+### 1000万行のTwitterデータに対して実行した結果
 
 https://gist.github.com/AKB428/5ddcde92197584bc3456
 
