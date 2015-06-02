@@ -37,6 +37,17 @@ or
 
 ``run ./private/1433194505.txt ./dictionary/anime_2015_2Q.txt 20``
 
+translate data csv->d3.json
+
+``ruby csv2d3jsjson.rb data.csv > data.json``
+
+open browser tubuyaki_bigdata.html
+
+or mac osx shell
+
+``open tubuyaki_bigdata.html``
+
+
 ### メインプログラム情報
  
 #### inazuma
@@ -51,20 +62,9 @@ Twitterのストリームを解析する場合はこれを使う。
 
 日本語のみを抽出するようにフィルタリングしています。
 
-
-translate data csv->d3.json
-
-``ruby csv2d3jsjson.rb data.csv > data.json``
-
-open browser tubuyaki_bigdata.html
-
-or mac osx shell
-
-``open tubuyaki_bigdata.html``
-
 ## アニメ作品タイトルの辞書について
 
-Project-ShangriLaの以下を利用しています。
+Project-ShangriLaの以下のツールを利用しています。
 
 https://github.com/Project-ShangriLa/CreateDictionary
 
