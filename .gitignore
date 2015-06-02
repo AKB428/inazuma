@@ -15,3 +15,5 @@ dist
 /.settings
 config/application.properties
 /private/*
+data.csv
+data.json
