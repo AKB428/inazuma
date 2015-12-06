@@ -50,7 +50,7 @@ object inazumaTwitter {
 
               if (tokens.get(index).getAllFeaturesArray()(0) == "名詞" && (tokens.get(index).getAllFeaturesArray()(1) == "一般" || tokens.get(index).getAllFeaturesArray()(1) == "固有名詞")) {
                 features += tokens.get(index).getSurfaceForm
-              } else if (tokens.get(index).getPartOfSpeech == "カスタム名詞") {
+              } else if (tokens.get(index).getPartOfSpeech == "カスタム名詞" || tokens.get(index).getPartOfSpeech == "wiki") {
                 // println(tokens.get(index).getPartOfSpeech)
                 // println(tokens.get(index).getSurfaceForm)
                 features += tokens.get(index).getSurfaceForm
