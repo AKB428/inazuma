@@ -24,8 +24,10 @@ object inazuma {
       printRankingNum = args(2).toInt
     }
 
+
     // kuromoji(形態要素解析)で日本語解析
     val words = input.flatMap(x => {
+
       val tokens : java.util.List[Token] = CustomTokenizer.tokenize(x, dictFilePath)
       val features : scala.collection.mutable.ArrayBuffer[String] = new collection.mutable.ArrayBuffer[String]()
 
@@ -76,10 +78,19 @@ object inazuma {
 }
 
 object CustomTokenizer {
+  var ct = new Tokenizer.Builder().build()
+  var init = false
 
   def tokenize(text: String, dictPath: String): java.util.List[Token]  = {
-    Tokenizer.builder().mode(Tokenizer.Mode.SEARCH)
-      .userDictionary(dictPath)
-      .build().tokenize(text)
+
+    if (init == false) {
+      ct = new Tokenizer.Builder().mode(Tokenizer.Mode.SEARCH)
+        .userDictionary(dictPath)
+        .build()
+
+      init = true
+    }
+
+    ct.tokenize(text)
   }
 }
