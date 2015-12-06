@@ -13,7 +13,7 @@ object inazuma {
 
     val input = sc.textFile(args(0)) // hdfs://
 
-    var printRankingNum = 10
+    var printRankingNum = 50
     var dictFilePath = "./dictionary/blank.txt"
 
     if (args.length >= 2) {

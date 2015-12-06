@@ -15,7 +15,7 @@ object inazumaTwitter {
 
     val input = sc.textFile(args(0)) // hdfs://
 
-    var printRankingNum = 10
+    var printRankingNum = 100
     var dictFilePath = "./dictionary/blank.txt"
 
     if (args.length >= 2) {
