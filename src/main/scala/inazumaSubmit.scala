@@ -1,19 +1,19 @@
 
+import java.io.PrintWriter
+
 import org.apache.spark.{SparkConf, SparkContext}
 import org.atilika.kuromoji.{Token, Tokenizer}
-import java.io.PrintWriter
 /**
  * Created by AKB428
  */
-object inazuma {
+object inazumaSubmit {
   def main(args: Array[String]): Unit = {
     val conf = new SparkConf().setAppName("Inazuma Application")
-    conf.setMaster("local[*]")
     val sc = new SparkContext(conf)
 
     val input = sc.textFile(args(0)) // hdfs://
 
-    var printRankingNum = 50
+    var printRankingNum = 100
     var dictFilePath = "./dictionary/blank.txt"
 
     if (args.length >= 2) {
@@ -77,7 +77,7 @@ object inazuma {
   }
 }
 
-object CustomTokenizer {
+object CustomTokenizer3 {
   var ct = new Tokenizer.Builder().build()
   var init = false
 
