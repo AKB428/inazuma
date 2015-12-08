@@ -93,7 +93,7 @@ object inazumaTwitter {
 object CustomTwitterTokenizer {
 
   def tokenize(text: String, dictPath: String): java.util.List[Token]  = {
-    Tokenizer.builder().mode(Tokenizer.Mode.SEARCH)
+    Tokenizer.builder().mode(Tokenizer.Mode.NORMAL)
       .userDictionary(dictPath)
       .build().tokenize(text)
   }

@@ -1,4 +1,4 @@
-name := "inazuma"
+name := "inazuma_submit"
 
 version := "1.0"
 
