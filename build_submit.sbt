@@ -2,7 +2,7 @@ name := "inazuma"
 
 version := "1.0"
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.10.5"
 
 resolvers += "Atilika Open Source repository" at "http://www.atilika.org/nexus/content/repositories/atilika"
 
