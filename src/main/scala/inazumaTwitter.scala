@@ -9,7 +9,7 @@ import java.io.PrintWriter
  */
 object inazumaTwitter {
   def main(args: Array[String]): Unit = {
-    val conf = new SparkConf().setAppName("Inazuma Application")
+    val conf = new SparkConf().setAppName("Inazuma Tw Application")
     conf.setMaster("local[*]")
     val sc = new SparkContext(conf)
 

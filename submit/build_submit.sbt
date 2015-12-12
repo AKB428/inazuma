@@ -25,4 +25,4 @@ libraryDependencies ++= Seq(
     exclude("com.esotericsoftware.minlog", "minlog")
 )
 
-mainClass in assembly := Some("inazumaSubmit")
+mainClass in assembly := Some("inazumaTwitterSubmit")

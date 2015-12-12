@@ -11,3 +11,5 @@ libraryDependencies ++= Seq(
 )
 
 libraryDependencies += "org.apache.spark" %% "spark-core" % "1.5.2"
+libraryDependencies += "com.databricks" % "spark-csv_2.11" % "1.3.0"
+libraryDependencies += "org.apache.spark" %% "spark-sql" % "1.5.2"
